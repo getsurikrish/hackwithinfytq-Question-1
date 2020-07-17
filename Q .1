@@ -1,0 +1,32 @@
+Hey Guys, there was a question in Round 2 of the HackWithInfy Contest which I feel is quite nice and I wasn't able to think of any possible solution to it. So the question goes like that:-
+We have defined a function f(x) = sum of all the digits of x. Now,
+0 <= i <= N
+0 <= j <= N
+We have to count how many pairs are there which satisfy the condition that f(i) + f(j) is a prime.
+Constraints:- 0 <= N <= 10^50
+Example:-
+1) N = 2
+pairs = 2
+2) N = 3
+pairs = 4
+
+Solution :(python 3.4)
+------------------------
+
+import numpy as np
+from itertools import *
+def prime(v):
+    for i in range(2,v//2+1):
+        if v%i==0:
+            return False
+    return True
+    
+n=int(input())
+c=0
+li=np.arange(1,n+1,1)
+for i in set(list(permutations(li,2))):
+    if sum(i)%2 is not 0:
+        if prime(sum(i)):
+            c=c+1
+print(c)
+---------------------------------------------------------------------------xxxxxxxxxxxxxxxxxxxxxxxxx-------------------------------------------------------------
