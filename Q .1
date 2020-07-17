@@ -24,8 +24,8 @@ def prime(v):
 n=int(input())
 c=0
 li=np.arange(1,n+1,1)
-for i in set(list(permutations(li,2))):
-    if sum(i)%2 is not 0:
+for i in set(list(combinations(li,2))):
+    if ((sum(i)%2)is not 0)and(sum(i)!=1):
         if prime(sum(i)):
             c=c+1
 print(c)
