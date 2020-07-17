@@ -1,1 +1,1 @@
-# hackwithinfytq-Question-1
+# hackwithinfytq questions
